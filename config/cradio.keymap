@@ -6,8 +6,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
+// #define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
+// #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
 
 / {
     behaviors {
@@ -39,12 +39,12 @@
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ;        │
-            HRML(A,        S,         D,         F)     &kp G          &kp H      HRMR(J,        K,         L,        SEMI)
+            &ht LSHFT A &lt 8 S  &lt 4 D    &lt 6 F     &kp G         &kp H      &lt 7 J    &lt 5 K    &lt  9 L    &ht RSHFT SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+            &kp Z    &ht LCTRL X  &ht LALT C    &kp V      &kp B      &kp N      &kp M   &ht RALT COMMA  &ht RCTRL DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 TAB   &kp ENTER     &kp SPACE  &lt 1 BSPC
+                                            &lt 2 TAB   &kp BSPC     &lt 10 SPACE  &lt 1 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -99,5 +99,78 @@
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
+
+        4th_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ INSERT   │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  :       │
+            &kp INS    &kp N1     &kp N2     &kp N3     &trans         &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp COLON
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ DELETE   │  4       │  5       │  6       │          │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  ' "     │
+            &kp DEL    &kp N4     &kp N5     &kp N6     &trans         &kp LARW   &kp DARW   &kp UARW   &kp RARW   &kp SQT
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ CAPS     │  7       │  8       │  9       │  0       │   │          │          │          │          │          │
+           &caps_word  &kp N7     &kp N8     &kp N9     &kp N0         &trans     &trans     &trans     &trans     &trans
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                             &trans     &kp ESC        &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+        5th_layer {
+            bindings = <
+            &trans        &trans       &trans       &trans       &trans         &kp HOME   &kp PG_DN  &kp PG_UP   &trans    &trans
+            &kp LARW      &kp DARW     &kp UARW     &kp RARW     &trans         &trans     &kp RGUI   &kp trans   &trans    &trans
+            &trans        &kp HOME     &kp PG_DN    &trans       &trans         &trans     &trans     &trans      &trans    &trans
+                                                    &trans     &trans           &trans     &trans
+            >;
+        };
+
+        6th_layer {
+            bindings = <
+            &trans       &trans     &trans    &trans     &trans         &trans     &kp UNDER   &kp PIPE2  &kp APOS   &trans
+            &kp CARET    &kp STAR   &kp AMPS  &trans     &trans         &kp HASH   &kp TILDE   &kp FSLH   &kp DQT    &kp DLLR
+            &trans       &trans     &trans    &trans     &trans         &trans     &kp MINUS   &kp BSLH   &kp GRAVE  &trans
+                                              &trans     &trans         &trans     &trans
+            >;
+        };
+
+        7th_layer {
+            bindings = <
+            &trans       &kp COLON     &kp LT        &kp GT       &kp SEMI         &trans     &kp UNDER   &kp PIPE2  &kp APOS    &trans
+            &kp LBRC     &kp RBRC      &kp LPAR      &kp RPAR     &kp AT           &trans     &trans      &kp EQUAL  &kp PLUS    &kp PRCNT
+            &trans       &kp EXCL      &kp LBKT      &kp RBKT     &trans           &trans     &trans      &trans     &trans      &trans
+                                                      &trans     &trans            &trans     &trans
+            >;
+        };
+
+        8th_layer {
+            bindings = <
+            &trans       &trans     &trans        &trans       &trans         &trans     &kp F7   &kp F8  &kp F9    &kp F10
+            &trans       &trans     &trans        &trans       &trans         &trans     &kp F4   &kp F5  &kp F6    &kp F11
+            &trans       &trans     &trans        &trans       &trans         &trans     &kp F1   &kp F2  &kp F3    &kp F12
+                                                  &trans       &trans         &trans     &trans
+
+            >;
+        };
+
+        9th_layer {
+            bindings = <
+            &trans       &kp N7     &kp N8        &kp N9       &trans         &trans     &trans   &trans  &trans    &trans
+            &kp N0       &kp N1     &kp N2        &kp N3       &trans         &trans     &trans   &trans  &trans    &trans
+            &trans       &kp N4     &kp N5        &kp N6       &trans         &trans     &trans   &trans  &trans    &trans
+                                                  &trans       &trans         &trans     &trans
+            >;
+        };
+
+        10th_layer {
+            bindings = <
+            &trans       &trans     &trans        &kp ESC       &trans         &trans     &trans   &trans  &trans    &trans
+            &trans       &trans     &trans        &kp RETURN    &trans         &trans     &kp LGUI &trans  &trans    &trans
+            &trans       &trans     &trans        &trans        &trans         &trans     &trans   &trans  &trans    &trans
+                                                  &trans       &kp TAB         &trans     &trans
+            >;
+        };
+
     };
 };
