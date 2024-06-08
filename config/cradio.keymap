@@ -120,7 +120,7 @@
         5th_layer {
             bindings = <
             &trans        &trans       &trans       &trans       &trans         &kp HOME   &kp PG_DN  &kp PG_UP   &trans    &trans
-            &kp LARW      &kp DARW     &kp UARW     &kp RARW     &trans         &trans     &kp RGUI   &trans   &trans    &trans
+            &kp LARW      &kp UARW     &kp DARW     &kp RARW     &trans         &trans     &kp RGUI   &trans   &trans    &trans
             &trans        &kp HOME     &kp PG_DN    &trans       &trans         &trans     &trans     &trans      &trans    &trans
                                                     &trans     &trans           &trans     &trans
             >;
