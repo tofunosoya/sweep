@@ -29,7 +29,7 @@
     keymap {
         compatible = "zmk,keymap";
         default_layer {
-            bindings =
+            bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
             &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
@@ -45,7 +45,7 @@
             >;
         };
         right_layer {
-            bindings =
+            bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ INSERT   │  1       │  2       │  3       │          │   │ HOME     │ VOL  DN  │ MUTE     │ VOL UP   │  :       │
             &kp INS    &kp N1     &kp N2     &kp N3     &trans         &kp HOME   &kp C_VOL_DN  &kp C_MUTE  &kp C_VOL_UP    &kp COLON
@@ -61,7 +61,7 @@
             >;
         };
         left_layer {
-            bindings =
+            bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
             &trans     &kp LBKT   &kp LBRC   &kp RBRC   &trans         &kp CARET  &kp LPAR   &kp RPAR   &kp RBKT   &kp TILDE
@@ -77,7 +77,7 @@
             >;
         };
         tri_layer {
-            bindings =
+            bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
            &sys_reset  &trans     &trans     &trans    &bt BT_SEL 0    &trans     &trans     &trans     &trans    &sys_reset
@@ -93,7 +93,7 @@
             >;
         };
         4th_layer {
-            bindings =
+            bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ INSERT   │  1       │  2       │  3       │          │   │          │          │          │          │          │
             &kp INS    &kp N1     &kp N2     &kp N3     &trans         &trans     &trans      &trans     &trans    &trans
@@ -109,7 +109,7 @@
             >;
         };
         5th_layer {
-            bindings =
+            bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │ PAGE UP  │          │          │   │ HOME     │ PAGE DN  │ PAGE UP  │          │          │
             &trans     &trans     &kp PG_UP  &trans     &trans         &kp HOME   &kp PG_DN  &kp PG_UP  &trans     &trans
@@ -125,7 +125,7 @@
             >;
         };
         6th_layer {
-            bindings =
+            bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │  _       │  |       │  '       │          │
             &trans     &trans     &trans     &trans     &trans         &trans     &kp UNDER  &kp PIPE2  &kp APOS   &trans
@@ -141,7 +141,7 @@
             >;
         };
         7th_layer {
-            bindings =
+            bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │  :       │  <       │  >       │  ;       │   │          │  _       │  |       │  '       │          │
             &trans     &kp COLON  &kp LT     &kp GT     &kp SEMI       &trans     &kp UNDER  &kp PIPE2  &kp APOS   &trans
@@ -157,7 +157,7 @@
             >;
         };
         8th_layer {
-            bindings =
+            bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │  F7      │  F8      │  F9      │  F10     │
             &trans     &trans     &trans     &trans     &trans         &trans     &kp F7     &kp F8     &kp F9     &kp F10
@@ -173,7 +173,7 @@
             >;
         };
         9th_layer {
-            bindings =
+            bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │  7       │  8       │  9       │          │   │          │          │          │          │          │
             &trans     &kp N7     &kp N8     &kp N9     &trans         &trans     &trans     &trans     &trans     &trans
@@ -189,7 +189,7 @@
             >;
         };
         10th_layer {
-            bindings =
+            bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │ ESC      │          │   │          │          │          │          │          │
             &trans     &trans     &trans     &kp ESC    &trans         &trans     &trans     &trans     &trans     &trans
